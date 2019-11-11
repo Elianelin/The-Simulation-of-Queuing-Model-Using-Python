@@ -244,7 +244,7 @@ class Passanger(Turtle):
         self.endservicedate = self.endqueuedate + self.servicetime
         self.waitingtime = self.endqueuedate - self.arrivaldate
         self.served = True
-
+'''
 class SelfishPassanger(Passanger):
     """
     A class for a Passanger who acts selfishly (estimating the amount of time that they will wait and comparing to a value of service). The only modification is the arrive method that now allows Passangers to balk.
@@ -279,7 +279,7 @@ class SelfishPassanger(Passanger):
         Outputs: NA
         """
         self.move(random(), self.queue.position[1] - 25 + random())
-
+'''
 class OptimalPassanger(Passanger):
     """
     A class for a Passanger who acts within a socially optimal framework (using the threshold from Naor's paper). The only modification is the arrive method that now allows Passangers to balk and a new attribute for the Naor threshold.
@@ -691,7 +691,7 @@ if __name__ == '__main__':
     import argparse
     parser = argparse.ArgumentParser(description="A simulation of an MM1 queue with a graphical representation made using the python Turtle module. Also, allows for some agent based aspects which at present illustrate results from Naor's paper: 'The Regulation of Queue Size by Levying Tolls'")
     parser.add_argument('-l', action="store", dest="lmbda", type=float, help='The arrival rate', default=2)
-    parser.add_argument('-m', action="store", dest="mu", type=float, help='The service rate', default = 1)
+    parser.add_argument('-m', action="store", dest="mu", type=float, help='The service rate', default = 5)
     parser.add_argument('-T', action="store", dest="T", type=float, help='The overall simulation time', default=300)
     parser.add_argument('-p', action="store", dest="probofselfish", help='Proportion of selfish Passangers (default: 0)', default=0, type=float)
     parser.add_argument('-c', action="store", dest="costofbalking", help='Cost of balking (default: False)', default=False, type=float)
